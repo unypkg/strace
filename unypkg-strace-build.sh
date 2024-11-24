@@ -77,11 +77,13 @@ get_include_paths
 
 unset LD_RUN_PATH
 
+./bootstrap
+
 ./configure \
     --prefix=/uny/pkg/"$pkgname"/"$pkgver"
 
 make -j"$(nproc)"
-make -j"$(nproc)" check 
+make -j"$(nproc)" -k check 
 make -j"$(nproc)" install
 
 ####################################################
